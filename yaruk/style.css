@@ -17,3 +17,11 @@ code { font: 15px ui-monospace, Menlo, monospace; overflow-wrap: anywhere; }
 .button { display: inline-block; padding: 12px 22px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
 .button:hover { filter: brightness(1.08); }
 .shot { display: block; width: 100%; height: auto; margin: 28px 0 8px; border-radius: 14px; border: 1px solid var(--line); }
+html[data-lang="en"] [data-l="tr"], html[data-lang="tr"] [data-l="en"] { display: none; }
+html[data-lang] article + article { margin-top: 0; border-top: 0; }
+.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+nav a[aria-current="page"] { color: var(--fg); text-decoration: none; font-weight: 600; }
+.lang { display: none; border: 1px solid var(--line); border-radius: 9px; padding: 2px; }
+html[data-lang] .lang { display: inline-flex; }
+.lang button { font: inherit; font-size: 14px; border: 0; background: none; color: var(--muted); padding: 4px 10px; border-radius: 7px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--accent); color: #fff; }

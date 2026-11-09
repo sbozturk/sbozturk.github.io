@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-tr="Yaruk: iPhone ve iPad için Ekran Paylaşma">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,12 +8,26 @@
 <meta name="apple-itunes-app" content="app-id=6831598272">
 <link rel="icon" href="img/icon.png">
 <link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  var l, h = location.hash.slice(1);
+  try { l = localStorage.getItem("lang"); } catch (e) {}
+  if (h === "en" || h === "tr") l = h;
+  if (l !== "en" && l !== "tr") l = /^tr/i.test(navigator.language || "") ? "tr" : "en";
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.lang = l;
+})();
+</script>
+
 </head>
 <body>
 <main>
-<nav><a href="#en">English</a> · <a href="#tr" lang="tr">Türkçe</a> · <a href="support.html">Support / Destek</a> · <a href="privacy.html">Privacy / Gizlilik</a></nav>
+<header class="top">
+<nav><a href="index.html" aria-current="page">Yaruk</a> · <a href="support.html"><span data-l="en">Support</span><span data-l="tr">Destek</span></a> · <a href="privacy.html"><span data-l="en">Privacy</span><span data-l="tr">Gizlilik</span></a></nav>
+<div class="lang" role="group" aria-label="Language / Dil"><button type="button" data-set="en">English</button><button type="button" data-set="tr">Türkçe</button></div>
+</header>
 
-<article id="en" class="hero">
+<article data-l="en" class="hero">
 <img class="icon" src="img/icon.png" width="112" height="112" alt="">
 <h1>Yaruk</h1>
 <p class="tagline">Your Mac on your iPhone and iPad, through the Screen Sharing already built into macOS. Nothing to install on the Mac.</p>
@@ -32,10 +46,9 @@
 </ul>
 <h2>Private by design</h2>
 <p>No account, no ads, no tracking, no in-app purchases. Connections go straight from your device to your computer, and passwords stay in your Keychain.</p>
-<p class="date">Yaruk is Old Turkic for “light”.</p>
 </article>
 
-<article id="tr" lang="tr" class="hero">
+<article lang="tr" data-l="tr" class="hero">
 <img class="icon" src="img/icon.png" width="112" height="112" alt="">
 <h1>Yaruk</h1>
 <p class="tagline">Mac’iniz iPhone ve iPad’inizde; macOS’un kendi Ekran Paylaşma özelliğiyle. Mac’e hiçbir şey kurmanız gerekmez.</p>
@@ -54,8 +67,21 @@
 </ul>
 <h2>Gizlilik öncelikli</h2>
 <p>Hesap, reklam, izleme ve uygulama içi satın alma yok. Bağlantılar doğrudan aygıtınızdan bilgisayarınıza gider; parolalar Anahtar Zinciri’nde kalır.</p>
-<p class="date">Yaruk, Eski Türkçe’de “ışık” demektir.</p>
 </article>
 </main>
+<script>
+(function () {
+  var root = document.documentElement, titles = { en: document.title, tr: root.getAttribute("data-title-tr") };
+  function set(l) {
+    root.setAttribute("data-lang", l);
+    root.lang = l;
+    document.title = titles[l];
+    document.querySelectorAll("[data-set]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.set === l); });
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
+  document.querySelectorAll("[data-set]").forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.set); }); });
+  set(root.getAttribute("data-lang"));
+})();
+</script>
 </body>
 </html>
