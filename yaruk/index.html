@@ -7,7 +7,8 @@
 <meta name="description" content="Control your Mac from iPhone and iPad with the Screen Sharing built into macOS. Free, private, nothing to install on the Mac.">
 <meta name="apple-itunes-app" content="app-id=6831598272">
 <link rel="icon" href="img/icon.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="site.css?v=3">
+<style>html[data-lang="en"] [data-l="tr"], html[data-lang="tr"] [data-l="en"] { display: none !important; }</style>
 <script>
 (function () {
   var l, h = location.hash.slice(1);
@@ -18,68 +19,85 @@
   document.documentElement.lang = l;
 })();
 </script>
-
 </head>
 <body>
-<main>
-<header class="top">
-<nav><a href="index.html" aria-current="page">Yaruk</a> · <a href="support.html"><span data-l="en">Support</span><span data-l="tr">Destek</span></a> · <a href="privacy.html"><span data-l="en">Privacy</span><span data-l="tr">Gizlilik</span></a></nav>
-<div class="lang" role="group" aria-label="Language / Dil"><button type="button" data-set="en">English</button><button type="button" data-set="tr">Türkçe</button></div>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><img src="img/icon.png" alt=""><span>Yaruk</span></a>
+<nav class="menu">
+<a href="index.html" aria-current="page"><span data-l="en">Home</span><span data-l="tr" lang="tr">Ana Sayfa</span></a>
+<a href="support.html"><span data-l="en">Support</span><span data-l="tr" lang="tr">Destek</span></a>
+<a href="privacy.html"><span data-l="en">Privacy</span><span data-l="tr" lang="tr">Gizlilik</span></a>
+</nav>
+<label class="lang">
+<select aria-label="Language / Dil">
+<option value="en">English</option>
+<option value="tr">Türkçe</option>
+</select>
+</label>
+</div>
 </header>
 
-<article data-l="en" class="hero">
-<img class="icon" src="img/icon.png" width="112" height="112" alt="">
+<main class="home">
+<div class="wrap">
+<section class="hero">
+<img class="icon" src="img/icon.png" alt="">
 <h1>Yaruk</h1>
-<p class="tagline">Your Mac on your iPhone and iPad, through the Screen Sharing already built into macOS. Nothing to install on the Mac.</p>
-<p><a class="button" href="https://apps.apple.com/app/id6831598272">Download on the App Store</a></p>
-<img class="shot" src="img/ipad-en.jpg" alt="Yaruk showing a Mac desktop on an iPad">
-<h2>Everything included, free</h2>
-<ul>
-<li>Finds Macs with Screen Sharing on your network; sign in with the Mac’s own user name and password.</li>
-<li>Tap to click, or turn on trackpad mode and point precisely like on a laptop.</li>
-<li>Hardware keyboard and trackpad, an extra key bar, Turkish and other letters typed correctly.</li>
-<li>Compose text with autocorrect and dictation, or type the clipboard where pasting doesn’t reach.</li>
-<li>Spaces, Mission Control, Spotlight, App Switcher, screenshots and Lock Screen one tap away.</li>
-<li>Pick one of the Mac’s displays on Macs with more than one.</li>
-<li>Reach your Mac from anywhere through an encrypted SSH tunnel, and open an SSH terminal to any server.</li>
-<li>Picture quality follows your connection on its own.</li>
-</ul>
-<h2>Private by design</h2>
-<p>No account, no ads, no tracking, no in-app purchases. Connections go straight from your device to your computer, and passwords stay in your Keychain.</p>
-</article>
-
-<article lang="tr" data-l="tr" class="hero">
-<img class="icon" src="img/icon.png" width="112" height="112" alt="">
-<h1>Yaruk</h1>
-<p class="tagline">Mac’iniz iPhone ve iPad’inizde; macOS’un kendi Ekran Paylaşma özelliğiyle. Mac’e hiçbir şey kurmanız gerekmez.</p>
-<p><a class="button" href="https://apps.apple.com/tr/app/id6831598272">App Store’dan İndirin</a></p>
-<img class="shot" src="img/ipad-tr.jpg" alt="iPad’de Mac masaüstünü gösteren Yaruk">
-<h2>Her şey dahil, ücretsiz</h2>
-<ul>
-<li>Ağınızdaki Ekran Paylaşma açık Mac’leri bulur; Mac’in kendi kullanıcı adı ve parolasıyla giriş yapılır.</li>
-<li>Dokunarak tıklayın ya da trackpad modunu açıp dizüstündeki gibi hassasça yönetin.</li>
-<li>Donanım klavyesi ve trackpad, ek tuş çubuğu; Türkçe karakterler doğru yazılır.</li>
-<li>Otomatik düzeltme ve sesle yazmayla metin yazın ya da panoyu yapıştırmanın çalışmadığı yerlere yazdırın.</li>
-<li>Masaüstleri, Görev Denetimi, Spotlight, uygulama değiştirme, ekran görüntüsü ve ekran kilidi tek dokunuşta.</li>
-<li>Birden fazla ekranı olan Mac’lerde istediğiniz ekranı seçin.</li>
-<li>Mac’inize her yerden şifreli SSH tüneliyle ulaşın, her sunucuya SSH terminali açın.</li>
-<li>Görüntü kalitesi bağlantınıza göre kendiliğinden ayarlanır.</li>
-</ul>
-<h2>Gizlilik öncelikli</h2>
-<p>Hesap, reklam, izleme ve uygulama içi satın alma yok. Bağlantılar doğrudan aygıtınızdan bilgisayarınıza gider; parolalar Anahtar Zinciri’nde kalır.</p>
-</article>
+<p><span data-l="en">Your Mac on your iPhone and iPad, through the Screen Sharing already built into macOS.</span><span data-l="tr" lang="tr">Mac’iniz iPhone ve iPad’inizde; macOS’un kendi Ekran Paylaşma özelliğiyle.</span></p>
+<a class="button" data-l="en" href="https://apps.apple.com/app/id6831598272">Download on the App Store</a>
+<a class="button" data-l="tr" lang="tr" href="https://apps.apple.com/tr/app/id6831598272">App Store’dan İndirin</a>
+<span class="note"><span data-l="en">Free. No account, no ads, no in-app purchases.</span><span data-l="tr" lang="tr">Ücretsiz. Hesap yok, reklam yok, uygulama içi satın alma yok.</span></span>
+</section>
+<img class="shot" data-l="en" src="img/ipad-en.jpg" alt="Yaruk showing a Mac desktop on an iPad">
+<img class="shot" data-l="tr" src="img/ipad-tr.jpg" alt="iPad’de Mac masaüstünü gösteren Yaruk">
+<h2 class="section-title"><span data-l="en">Everything included</span><span data-l="tr" lang="tr">Her şey dahil</span></h2>
+<div class="features" data-l="en">
+<div class="feature"><h3>Finds your Macs</h3><p>Macs with Screen Sharing on show up by themselves. Sign in with the Mac’s own user name and password.</p></div>
+<div class="feature"><h3>Touch or trackpad</h3><p>Tap where you want to click, or turn on trackpad mode and point precisely, like on a laptop.</p></div>
+<div class="feature"><h3>Real keyboard</h3><p>Hardware keyboards, an extra key bar with Esc, Tab and modifiers, and Turkish letters that type correctly.</p></div>
+<div class="feature"><h3>Write, then send</h3><p>Compose with autocorrect and dictation, or type the clipboard where pasting doesn’t reach.</p></div>
+<div class="feature"><h3>Mac shortcuts</h3><p>Spaces, Mission Control, Spotlight, App Switcher, screenshots and Lock Screen one tap away.</p></div>
+<div class="feature"><h3>Every display</h3><p>On a Mac with more than one monitor, pick the one you want to see.</p></div>
+<div class="feature"><h3>From anywhere</h3><p>An encrypted SSH tunnel to your Mac, and an SSH terminal for any server.</p></div>
+<div class="feature"><h3>Smooth on any link</h3><p>Picture quality follows your connection on its own.</p></div>
+</div>
+<div class="features" data-l="tr" lang="tr">
+<div class="feature"><h3>Mac’lerinizi bulur</h3><p>Ekran Paylaşma açık Mac’ler kendiliğinden görünür. Mac’in kendi kullanıcı adı ve parolasıyla girersiniz.</p></div>
+<div class="feature"><h3>Dokunmatik ya da trackpad</h3><p>Tıklamak istediğiniz yere dokunun ya da trackpad modunu açıp dizüstündeki gibi hassasça yönetin.</p></div>
+<div class="feature"><h3>Gerçek klavye</h3><p>Donanım klavyesi, Esc, Tab ve değiştirici tuşlu ek tuş çubuğu; Türkçe karakterler doğru yazılır.</p></div>
+<div class="feature"><h3>Yaz, sonra gönder</h3><p>Otomatik düzeltme ve sesle yazmayla yazın ya da panoyu yapıştırmanın çalışmadığı yere yazdırın.</p></div>
+<div class="feature"><h3>Mac kısayolları</h3><p>Masaüstleri, Görev Denetimi, Spotlight, uygulama değiştirme, ekran görüntüsü ve ekran kilidi tek dokunuşta.</p></div>
+<div class="feature"><h3>Her ekran</h3><p>Birden fazla monitörü olan Mac’te görmek istediğiniz ekranı seçin.</p></div>
+<div class="feature"><h3>Her yerden</h3><p>Mac’inize şifreli SSH tüneli, her sunucu için SSH terminali.</p></div>
+<div class="feature"><h3>Her bağlantıda akıcı</h3><p>Görüntü kalitesi bağlantınıza göre kendiliğinden ayarlanır.</p></div>
+</div>
+<section class="privacy-band">
+<h2><span data-l="en">Private by design</span><span data-l="tr" lang="tr">Gizlilik öncelikli</span></h2>
+<p><span data-l="en">Connections go straight from your device to your computer; there is no relay server. Passwords stay in your Keychain, and nothing is collected.</span><span data-l="tr" lang="tr">Bağlantılar doğrudan aygıtınızdan bilgisayarınıza gider; aracı sunucu yoktur. Parolalar Anahtar Zinciri’nde kalır, hiçbir veri toplanmaz.</span></p>
+</section>
+</div>
 </main>
+
+<footer class="site-footer">
+<div class="wrap">
+<span class="copy">© 2026 Satuk Buğrahan Öztürk</span>
+<a href="support.html"><span data-l="en">Support</span><span data-l="tr" lang="tr">Destek</span></a>
+<a href="privacy.html"><span data-l="en">Privacy Policy</span><span data-l="tr" lang="tr">Gizlilik Politikası</span></a>
+<a href="mailto:farpanesupport@gmail.com">farpanesupport@gmail.com</a>
+</div>
+</footer>
 <script>
 (function () {
-  var root = document.documentElement, titles = { en: document.title, tr: root.getAttribute("data-title-tr") };
+  var root = document.documentElement, select = document.querySelector(".lang select"),
+      titles = { en: document.title, tr: root.getAttribute("data-title-tr") };
   function set(l) {
     root.setAttribute("data-lang", l);
     root.lang = l;
     document.title = titles[l];
-    document.querySelectorAll("[data-set]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.set === l); });
+    select.value = l;
     try { localStorage.setItem("lang", l); } catch (e) {}
   }
-  document.querySelectorAll("[data-set]").forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.set); }); });
+  select.addEventListener("change", function () { set(select.value); });
   set(root.getAttribute("data-lang"));
 })();
 </script>

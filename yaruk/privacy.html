@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yaruk Privacy Policy</title>
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="Yaruk collects no data.">
+<meta name="apple-itunes-app" content="app-id=6831598272">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="site.css?v=3">
+<style>html[data-lang="en"] [data-l="tr"], html[data-lang="tr"] [data-l="en"] { display: none !important; }</style>
 <script>
 (function () {
   var l, h = location.hash.slice(1);
@@ -15,15 +19,27 @@
   document.documentElement.lang = l;
 })();
 </script>
-
 </head>
 <body>
-<main>
-<header class="top">
-<nav><a href="index.html">Yaruk</a> · <a href="support.html"><span data-l="en">Support</span><span data-l="tr">Destek</span></a> · <a href="privacy.html" aria-current="page"><span data-l="en">Privacy</span><span data-l="tr">Gizlilik</span></a></nav>
-<div class="lang" role="group" aria-label="Language / Dil"><button type="button" data-set="en">English</button><button type="button" data-set="tr">Türkçe</button></div>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html"><img src="img/icon.png" alt=""><span>Yaruk</span></a>
+<nav class="menu">
+<a href="index.html"><span data-l="en">Home</span><span data-l="tr" lang="tr">Ana Sayfa</span></a>
+<a href="support.html"><span data-l="en">Support</span><span data-l="tr" lang="tr">Destek</span></a>
+<a href="privacy.html" aria-current="page"><span data-l="en">Privacy</span><span data-l="tr" lang="tr">Gizlilik</span></a>
+</nav>
+<label class="lang">
+<select aria-label="Language / Dil">
+<option value="en">English</option>
+<option value="tr">Türkçe</option>
+</select>
+</label>
+</div>
 </header>
 
+<main class="text">
+<div class="wrap doc">
 <article data-l="en">
 <h1>Yaruk Privacy Policy</h1>
 <p class="date">Last updated: 10 November 2026</p>
@@ -39,7 +55,6 @@
 <p>Deleting the app removes all of its data from your device.</p>
 <p>Questions: <a href="mailto:farpanesupport@gmail.com">farpanesupport@gmail.com</a></p>
 </article>
-
 <article lang="tr" data-l="tr">
 <h1>Yaruk Gizlilik Politikası</h1>
 <p class="date">Son güncelleme: 10 Kasım 2026</p>
@@ -55,18 +70,29 @@
 <p>Uygulamayı silmek tüm verilerini aygıtınızdan kaldırır.</p>
 <p>Sorular: <a href="mailto:farpanesupport@gmail.com">farpanesupport@gmail.com</a></p>
 </article>
+</div>
 </main>
+
+<footer class="site-footer">
+<div class="wrap">
+<span class="copy">© 2026 Satuk Buğrahan Öztürk</span>
+<a href="support.html"><span data-l="en">Support</span><span data-l="tr" lang="tr">Destek</span></a>
+<a href="privacy.html"><span data-l="en">Privacy Policy</span><span data-l="tr" lang="tr">Gizlilik Politikası</span></a>
+<a href="mailto:farpanesupport@gmail.com">farpanesupport@gmail.com</a>
+</div>
+</footer>
 <script>
 (function () {
-  var root = document.documentElement, titles = { en: document.title, tr: root.getAttribute("data-title-tr") };
+  var root = document.documentElement, select = document.querySelector(".lang select"),
+      titles = { en: document.title, tr: root.getAttribute("data-title-tr") };
   function set(l) {
     root.setAttribute("data-lang", l);
     root.lang = l;
     document.title = titles[l];
-    document.querySelectorAll("[data-set]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.set === l); });
+    select.value = l;
     try { localStorage.setItem("lang", l); } catch (e) {}
   }
-  document.querySelectorAll("[data-set]").forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.set); }); });
+  select.addEventListener("change", function () { set(select.value); });
   set(root.getAttribute("data-lang"));
 })();
 </script>
